@@ -1,0 +1,6 @@
+[submodule "catkin_ws/src/image_transport_plugins"]
+	path = catkin_ws/src/image_transport_plugins
+	url = https://github.com/ros-perception/image_transport_plugins
+[submodule "catkin_ws/src/iai_kinect2"]
+	path = catkin_ws/src/iai_kinect2
+	url = https://github.com/TheEngineRoom-UniGe/iai_kinect2.git
