@@ -55,6 +55,7 @@ mkShell {
       gazebo-plugins
       xacro
       perception-pcl
+      libfreenect2
     ]; })
   ]  ++ pkgs.lib.optionals pkgs.stdenv.isDarwin [ pkgs.GLUT pkgs.Cocoa ];
 

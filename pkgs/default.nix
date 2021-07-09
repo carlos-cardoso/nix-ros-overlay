@@ -97,6 +97,7 @@ in {
   };
 
   openni2 = self.callPackage ./openni2 { };
+  libfreenect2 = self.callPackage ./libfreenect2 { };
 
   opensplice_6_9 = self.callPackage ./opensplice { };
   opensplice = self.opensplice_6_9;
