@@ -49,13 +49,10 @@ mkShell {
     libusb1
     (buildEnv { paths = [
       rosbash
-      turtlebot3-description
-      turtlebot3-teleop
-      turtlebot3-gazebo
-      gazebo-plugins
-      xacro
       perception-pcl
       libfreenect2
+      cv-bridge
+      image-transport-plugins
     ]; })
   ]  ++ pkgs.lib.optionals pkgs.stdenv.isDarwin [ pkgs.GLUT pkgs.Cocoa ];
 
@@ -63,5 +60,4 @@ mkShell {
 
   ROS_HOSTNAME = "localhost";
   ROS_MASTER_URI = "http://localhost:11311";
-  TURTLEBOT3_MODEL = "burger";
 }
