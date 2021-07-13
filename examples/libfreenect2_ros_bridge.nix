@@ -34,6 +34,7 @@ in
 mkShell {
   buildInputs = [
     pkgs.bashInteractive
+    pkgs.tmux
     pkgs.libva
     #pkgs.cudatoolkit_11_2
     pkgs.libjpeg_turbo
@@ -62,6 +63,6 @@ mkShell {
   ROS_MASTER_URI = "http://localhost:11311";
 
   shellHook = ''
-    source "./catkin_ws/devel/setup.bash"
+        source "./catkin_ws/devel/setup.bash"
   '';
 }
