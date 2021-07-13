@@ -60,4 +60,8 @@ mkShell {
 
   ROS_HOSTNAME = "localhost";
   ROS_MASTER_URI = "http://localhost:11311";
+
+  shellHook = ''
+    source "./catkin_ws/devel/setup.bash"
+  '';
 }

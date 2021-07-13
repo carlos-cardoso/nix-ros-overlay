@@ -53,3 +53,14 @@ set -euo pipefail
 #
 # Copy udev rules
 # sudo cp 90-kinect2.rules /etc/udev/rules.d/
+
+# sh load_kinnect_shell.sh
+# cd catkin_ws
+# catkin_make
+# source devel/setup.sh
+# catkin_make
+
+# to run, in different terminals
+# roscore
+# nixGL rosrun kinect2_bridge kinect2_bridge
+# nixGL rosrun kinect2_viewer kinect2_viewer
