@@ -1,3 +1,51 @@
+# Kinect2 ROS
+
+Install Nix: https://nixos.org/nix/download.html
+
+```$ bash <(curl -L https://nixos.org/nix/install)```
+
+```$ nix-channel --add https://github.com/guibou/nixGL/archive/master.tar.gz nixgl && nix-channel --update```
+
+```$ nix-env -iA nixgl.nixGLDefault   # or replace `nixGLDefault` with your desired wrapper```
+
+## (Optional) configure Nix to use ROS Cachix binary cache
+
+```
+$ nix-env -iA cachix -f https://cachix.org/api/v1/install
+$ cachix use ros
+```
+
+```
+$ git clone --recurse-submodules https://github.com/carlos-cardoso/nix-ros-overlay.git
+```
+
+## Copy udev rules
+
+```
+$ sudo cp 90-kinect2.rules /etc/udev/rules.d/
+```
+
+## Compile kinnect2 packages
+
+``` 
+$ sh load_kinnect_shell.sh
+$ sh make_with_catkin.sh
+```
+
+## to run, (in different terminals)
+```
+$ roscore
+$ nixGL rosrun kinect2_bridge kinect2_bridge
+$ nixGL rosrun kinect2_viewer kinect2_viewer
+```
+
+## Alternatively:
+
+```
+$ sh load_kinnect_shell.sh
+$ sh tmux_launch_kinect_viewer.sh
+```
+
 # ROS overlay for the Nix package manager
 
 ### Easily install the [Robot Operating System (ROS)](http://www.ros.org/) on any Linux distribution
